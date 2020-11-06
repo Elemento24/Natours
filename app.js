@@ -8,10 +8,6 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
-
-// ============
-// NEED TO ASK
-// ============
 const cors = require('cors');
 
 const AppError = require('./utils/appError');
@@ -30,14 +26,20 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // 1) GLOBAL MIDDLEWARES
+// Enable all CORS (Cross Origin Resource Sharing) Requests
+// Access-Control-Allow-Origin *
+app.use(cors());
+
+// api.natours.com FRONT_END natours.com
+// app.use(cors({
+//   origin: 'https://www.natours.com'
+// }));
+
+app.options('*', cors());
+// app.options('/api/v1/tours/:id', cors());
+
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
-
-// ============
-// NEED TO ASK
-// ============
-// Enable all CORS (Cross Origin Resource Sharing) Requests
-app.use(cors());
 
 // Set Security HTTP Headers
 app.use(
