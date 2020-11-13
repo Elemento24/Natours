@@ -11,7 +11,7 @@ Welcome Guys! This repo consists of my code for Natours Project, which I made as
 - Authorization from scratch, using <a target="_blank" href = 'https://jwt.io/'>JWT</a>
 - Maps integration using <a target="_blank" href = 'https://mapbox.com'>Mapbox</a>
 - Payments integration using <a target="_blank" href = 'https://stripe.com/en-in'>Stripe</a>
-- File Upload using<a target="_blank" href = 'https://github.com/expressjs/multer'>Multer</a> 
+- File Upload using <a target="_blank" href = 'https://github.com/expressjs/multer'>Multer</a> 
 - Emails using <a target='_blank' href = 'https://sendgrid.com'>Sendgrid</a> 
 - Image Processing using <a target='_blank' href = 'https://github.com/lovell/sharp'>Sharp</a> 
 - Pug templates for Client-Side Website
