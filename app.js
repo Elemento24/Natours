@@ -44,19 +44,26 @@ app.options('*', cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set Security HTTP Headers
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       defaultSrc: ["'self'", 'https:', 'http:', 'data:', 'ws:'],
+//       baseUri: ["'self'"],
+//       fontSrc: ["'self'", 'https:', 'http:', 'data:'],
+//       scriptSrc: [
+//         "'self'",
+//         'https:',
+//         'http:',
+//         'blob:'],
+//       styleSrc: ["'self'", 'https:', 'http:', "'unsafe-inline'"]
+//     }
+//   })
+// );
+
+// Set Security HTTP Headers
 app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'", 'https:', 'http:', 'data:', 'ws:'],
-      baseUri: ["'self'"],
-      fontSrc: ["'self'", 'https:', 'http:', 'data:'],
-      scriptSrc: [
-        "'self'",
-        'https:',
-        'http:',
-        'blob:'],
-      styleSrc: ["'self'", 'https:', 'http:', "'unsafe-inline'"]
-    }
+  helmet({
+    contentSecurityPolicy: false,
   })
 );
 
